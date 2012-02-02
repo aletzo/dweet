@@ -28,14 +28,16 @@
             <?php echo $content ?>
         </div>
         <footer>
-
+            <div class="center">
+                <a href="http://mydevnull.net" target="_blank">~/dev/null</a>
+            </div>
         </footer>
     </div>
     <script src="<?php echo Dweet_Helper::baseurl() ?>/js/jquery-1.7.1.min.js"></script>
     <script src="<?php echo Dweet_Helper::baseurl() ?>/js/jquery-ui-1.8.17.custom.min.js"></script>
     <script src="<?php echo Dweet_Helper::baseurl() ?>/js/jquery.simplyCountable.js"></script>
     <script type="text/javascript">
-        //we define here params that are required in the js/app.js file
+        //we define here the parameters that are required in the js/app.js file
 
         var baseurl = '<?php echo Dweet_Helper::baseurl() ?>';
     </script>

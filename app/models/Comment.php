@@ -2,9 +2,12 @@
 
 require_once PROJECT_ROOT . '/app/models/BaseModel.php';
 
+/**
+ * the comment model
+ */
 class Comment extends BaseModel
 {
-
+   
     public $created_at;
     public $post_id;
     public $text;
@@ -13,11 +16,19 @@ class Comment extends BaseModel
     protected $post = null;
     protected $user = null;
 
+    /**
+     * saves the model.
+     * decides to insert if the model is new, or update if the model is "dirty"
+     * 
+     */
     public function save()
     {
         empty($this->id) ? $this->create() : $this->update();
     }
 
+    /**
+     * implements the mysql insert query with a PDO prepared statement
+     */
     protected function create()
     {
         $this->created_at = date('Y-m-d H:i:s');
@@ -32,6 +43,9 @@ class Comment extends BaseModel
         $this->id = $this->db->lastInsertId();
     }
 
+    /**
+     * implements the mysql update query with a PDO prepared statement
+     */
     protected function update()
     {
         $stmt = $this->db->prepare('UPDATE comment SET text = :text WHERE id = :id');
@@ -40,6 +54,9 @@ class Comment extends BaseModel
         $stmt->execute();
     }
 
+    /**
+     * implements the mysql delete query with a PDO prepared statement
+     */
     public function delete($id)
     {
         $stmt = $this->db->prepare('DELETE FROM comment WHERE id = :id');
@@ -47,6 +64,11 @@ class Comment extends BaseModel
         $stmt->execute();
     }
 
+    /**
+     * loads the Post model of this comment
+     * 
+     * @return Post 
+     */
     public function getPost()
     {
         if ($this->post === null) {
@@ -56,6 +78,11 @@ class Comment extends BaseModel
         return $this->post;
     }
 
+    /**
+     * loads the User model of this comment
+     * 
+     * @return User
+     */
     public function getUser()
     {
         if ($this->user === null) {

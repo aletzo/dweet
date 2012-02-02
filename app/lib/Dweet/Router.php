@@ -1,10 +1,18 @@
 <?php
 
+/**
+ * the class that decides with controller/action combo to fetch
+ */
 class Dweet_Router
 {
     
     static protected $instance = null;
 
+    /**
+     * a singleton pattern
+     * 
+     * @return Dweet_Router 
+     */
     static public function getInstance()
     {
         if (self::$instance === null) {
@@ -14,13 +22,25 @@ class Dweet_Router
         return self::$instance;
     }
 
+    /**
+     * this method decides (resolves) which controller/action combo to fetch
+     */
     static public function resolve()
     {
         $projectDir = basename(PROJECT_ROOT);
 
         $params = explode('/' ,$_SERVER['REQUEST_URI']);
 
-
+        /*
+         * by using the default_controller and the default_action configuration parameters
+         * we achieve this:
+         * 
+         * http://localhost/dweet
+         * http://localhost/dweet/page
+         * http://localhost/dweet/page/home
+         * 
+         * all the three routes above resolve to the same page
+         */
         $defaultController = Dweet::getInstance()->config['default_controller'];
         $defaultAction     = Dweet::getInstance()->config['default_action'];
 
@@ -39,7 +59,7 @@ class Dweet_Router
         $className  = ucfirst($controller) . 'Controller';
         $methodName = strtolower($action) .'Action';
 
-        // if the controller or the action is incorrect, send the user to the defined error controller and the defined not found action
+        // if the controller or the action is invalid, send the user to the defined error controller and the defined error action
         if (! class_exists($className) || ! method_exists($className, $methodName)) { 
             $className  = ucfirst(Dweet::getInstance()->config['error_controller']) . 'Controller';
             $methodName = strtolower(Dweet::getInstance()->config['error_action']) . 'Action';

@@ -1,8 +1,18 @@
 <?php
 
+/**
+ * a class that keeps the Dweet logs
+ */
 class Dweet_Logger
 {
-
+    /**
+     * based on the defined $type (e.g. debug, error, sql) it logs 
+     * to the corresponding file the passed data. It can really
+     * help during debugging
+     * 
+     * @param type $type the file to log to the data
+     * @param type $data the data to log
+     */
     public static function log($type, $data)
     {
         

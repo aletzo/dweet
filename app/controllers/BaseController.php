@@ -1,8 +1,18 @@
 <?php
 
+/**
+ * this is the base class that extend all the controllers that their actions render a view
+ */
 class BaseController
 {
-
+    
+    /**
+     * prepares the view to be rendered in the layout
+     * 
+     * @param string $view the controller/action combo that corresponds to a view file in app/views
+     * @param array $params [optional] any parameters/variables that the user wishes to pass to the layout
+     * @param string $layout [optional] the layout to draw the view inside
+     */
     protected function render($view, $params = array(), $layout = null)
     {
         $viewFile = PROJECT_ROOT . '/app/views/' . $view . '.php';
@@ -12,7 +22,14 @@ class BaseController
         }
     }
 
-    protected function renderLayout($action, $params, $layout = null)
+    /**
+     * renders the layout along with the view
+     * 
+     * @param string $action the path to view file
+     * @param array $params the parameters/variables that the user wishes to pass to the layout
+     * @param type $layout the layout to draw the view inside
+     */
+    protected function renderLayout($action, $params, $layout)
     {
         if ( ! $layout) {
             $layout = Dweet::getInstance()->config['default_layout'];
@@ -34,16 +51,5 @@ class BaseController
 
         echo $html;
     }
-
-    protected function redirect($url)
-    {
-        if ( ! strstr('http://', $url)) { //if the url is not absolute, it is internal so we prepend the baseurl
-            $url = Dweet_Helper::baseurl() . '/' .  trim($url, '/');
-        }
-        
-        header('location: ' . $url);
-    }
-
-
 
 }

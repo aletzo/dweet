@@ -2,9 +2,18 @@
 
 require_once PROJECT_ROOT . '/app/models/BaseModelTable.php';
 
+/**
+ * this class has all the select queries for the 'comment' table
+ */
 class CommentTable extends BaseModelTable
 {
 
+    /**
+     * selects a single comment from the database with a PDO prepared statement
+     * 
+     * @param integer $id the id of the comment to load
+     * @return mixed Comment if the comment exists, null otherwise
+     */
     static public function load($id)
     {
         $stmt = Dweet::getInstance()->db->prepare('SELECT id, user_id, post_id, text, created_at FROM comment WHERE id = ? LIMIT 0, 1');
@@ -25,7 +34,14 @@ class CommentTable extends BaseModelTable
 
         return null;
     }
-
+    
+    /**
+     * selects the comments from the database with a PDO prepared statement
+     * 
+     * @param integer $userId the user_id to filter with the comments
+     * @param integer $postId the post_id to filter with the comments
+     * @return array an array that contains the found comments
+     */
     static public function listAll($userId = null, $postId = null)
     {
         $query = 'SELECT id, user_id, post_id, text, created_at FROM comment';

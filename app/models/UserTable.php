@@ -2,9 +2,18 @@
 
 require_once PROJECT_ROOT . '/app/models/BaseModelTable.php';
 
+/**
+ * this class has all the select queries for the 'user' table
+ */
 class UserTable extends BaseModelTable
 {
 
+    /**
+     * selects a single user from the database with a PDO prepared statement
+     * 
+     * @param integer $id the id of the user to load
+     * @return mixed User if the user exists, null otherwise
+     */
     static public function load($id)
     {
         $stmt = Dweet::getInstance()->db->prepare('SELECT id, name FROM user WHERE id = ? LIMIT 0, 1');
@@ -23,6 +32,11 @@ class UserTable extends BaseModelTable
         return null;
     }
 
+    /**
+     * selects all the users from the database with a PDO prepared statement
+     * 
+     * @return array an array that contains the found users
+     */
     static public function listall()
     {
         $stmt = Dweet::getInstance()->db->prepare('SELECT id, name FROM user');

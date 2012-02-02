@@ -2,9 +2,15 @@
 
 require_once PROJECT_ROOT . '/app/controllers/AjaxController.php';
 
+/**
+ * the controller that handles the posts
+ */
 class PostController extends AjaxController
 {
     
+    /**
+     * the action that creates the posts via AJAX
+     */
     public function createAction()
     {
         header('Content-type: application/json');

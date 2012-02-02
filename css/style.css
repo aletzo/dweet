@@ -1,3 +1,21 @@
+/**********************************/
+/*          colors legend         */
+/* ============================== */
+/*                                */
+/*  body default color  : 444     */
+/*  header blue         : 0087FF  */
+/*  post blue           : 5BB2FF  */
+/*  comment blue        : A0D2FF  */
+/*  letters blue        : 000F84  */
+/*  button orange       : FF6100  */
+/*  button orange hover : FF8800  */
+/*  footer gray         : 888     */
+/*  footer link         : 444     */
+/*  footer link hover   : 000     */
+/*                                */
+/*********************************/
+
+
 /* HTML5 ✰ Boilerplate
  * ==|== normalize ==========================================================
  */
@@ -11,8 +29,8 @@ html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-
 body { margin: 0; font-size: 13px; line-height: 1.231; }
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #FF6100; color: #fff; text-shadow: none; }
+::selection { background: #FF6100; color: #fff; text-shadow: none; }
 
 a { color: #00e; }
 a:visited { color: #551a8b; }
@@ -62,6 +80,14 @@ table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
 
+/*
+ * begin the site styles
+ */
+body {
+    font-family: "Myriad Pro", "Trebuchet MS", Arial, sans-serif;
+    color: #444;
+}
+
 .center {
     margin: 0 auto;
     overflow: hidden;
@@ -93,7 +119,6 @@ td { vertical-align: top; }
     color: #fff;
     text-decoration: none;
 }
-
 #container header a:hover {
     border-bottom: 1px solid #fff;
 }
@@ -102,7 +127,6 @@ td { vertical-align: top; }
     font-size: 16px;
     min-height: 500px;
 }
-
 #container #main #post {
     border: 3px solid #0087FF;
     color: #0087FF;
@@ -143,7 +167,6 @@ td { vertical-align: top; }
     text-decoration: none;
     width: 100px;
 }
-
 #container #main #post_submit:hover {
     background: #FF8800;
 }
@@ -152,11 +175,9 @@ td { vertical-align: top; }
     top: 1px;
     left: 1px;
 }
-
 #container #main strong {
     color: #0087FF;
 }
-
 #container #main #posts {
     margin: 30px 0;
     width: 100%;
@@ -214,6 +235,17 @@ td { vertical-align: top; }
     background: #888;
     height: 150px;
     width: 100%;
+}
+#container footer div {
+    line-height: 150px;
+    text-align: center;
+}
+#container footer div a {
+    color: #444;
+    text-decoration: none;
+}
+#container footer div a:hover {
+    color: #000;
 }
 
 #reply_textarea {

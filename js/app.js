@@ -1,3 +1,6 @@
+/**************************************
+ * begin the post submit functionality
+ */
 $('#post_submit').click(function(e) {
     if ($(this).hasClass('disabled')) {
         alert('160 max characters allowed!');
@@ -38,7 +41,13 @@ $('#post_submit').click(function(e) {
         }
     });
 });
+/*
+ * end the post submit functionality
+ ************************************/
 
+/*****************************************
+ * begin the comment submit functionality
+ */
 var clicked_link = null;
 var post_id      = null;
 
@@ -52,8 +61,6 @@ function updateTips(t) {
 		tips.removeClass('ui-state-highlight', 1500);
 	}, 500 );
 }
-
-
 
 function checkLength( o, n, min, max ) {
 	if ( o.val().length > max || o.val().length < min ) {
@@ -141,8 +148,13 @@ $('a.reply').live('click', function(e) {
 
 	$('#dialog-form').dialog('open');
 });
+/*
+ * end the comment submit functionality
+ ***************************************/
 
-
+/*******************************************
+ * begin the characters count functionality
+ */
 $('#post').simplyCountable({
     counter:            '#characters em',
     countType:          'characters',
@@ -178,8 +190,6 @@ $('#reply_textarea').simplyCountable({
     },
     onMaxCount:         function(count, countable, counter){}
 });
-
-
-
-
-
+/*
+ * end the characters count functionality
+ *****************************************/

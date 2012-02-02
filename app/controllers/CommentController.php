@@ -2,9 +2,15 @@
 
 require_once PROJECT_ROOT . '/app/controllers/AjaxController.php';
 
+/**
+ * the controller to handle the comments
+ */
 class CommentController extends AjaxController
 {
 
+    /**
+     * the action that creates the comment via AJAX
+     */
     public function createAction()
     {
         header('Content-type: application/json');
@@ -38,4 +44,5 @@ class CommentController extends AjaxController
 
         echo json_encode($response);
     }
+    
 }
