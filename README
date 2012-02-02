@@ -1,1 +1,7 @@
-a simple twitter clone
+A simple twitter (not really) clone.
+
+The db schema is located at: sql/schema.sql
+
+To install, just clone the repository and fix the config/config.php
+
+The code heavily undocummented and uncommented. Yet :D
