@@ -1,0 +1,6 @@
+Options +FollowSymLinks +ExecCGI
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule !\.(js|ico|gif|jpg|png|css|xml|xls|xlsx|doc|docx|pdf|zip|rar)$ index.php
+</IfModule>

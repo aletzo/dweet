@@ -1,0 +1,222 @@
+/* HTML5 ✰ Boilerplate
+ * ==|== normalize ==========================================================
+ */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+label { cursor: pointer; }
+legend { border: 0; *margin-left: -7px; padding: 0; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; *overflow: visible; }
+table button, table input { *overflow: auto; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+
+.center {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 500px;
+}
+
+#container header {
+    background: #0087FF;
+    height: 50px;
+    margin: 0 0 20px;
+    width: 100%;
+}
+#container header h1 {
+    color: #fff;
+    float: left;
+    margin: 0;
+    line-height: 50px;
+}
+#container header #menu {
+    float: left;
+    height: 20px;
+    margin: 30px 0 0 50px;
+    width: 200px;
+}
+#container header #menu a {
+    margin: 0 5px;
+}
+#container header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#container header a:hover {
+    border-bottom: 1px solid #fff;
+}
+
+#container #main {
+    font-size: 16px;
+    min-height: 500px;
+}
+
+#container #main #post {
+    border: 3px solid #0087FF;
+    color: #0087FF;
+    height: 80px;
+    padding: 10px;
+    width: 474px;
+}
+#container #main #textarea_footer {
+    overflow: hidden;
+    width: 100%;
+}
+#container #main #textarea_footer a {
+    float: left;
+}
+#container #main #textarea_footer a.disabled {
+    color: #F27474;
+    background: red;
+}
+#container #main #textarea_footer #characters {
+    float: right;
+    font-size: 12px;
+    margin: 7px 0 0;
+}
+#container #main #textarea_footer #characters em.over {
+    color: red;
+    font-size: 16px;
+}
+#container #main #post_submit {
+    background: #FF6100;
+    border-radius: 10px;
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0 0;
+    text-align: center;
+    text-decoration: none;
+    width: 100px;
+}
+
+#container #main #post_submit:hover {
+    background: #FF8800;
+}
+#container #main #post_submit:active {
+    position: relative;
+    top: 1px;
+    left: 1px;
+}
+
+#container #main strong {
+    color: #0087FF;
+}
+
+#container #main #posts {
+    margin: 30px 0;
+    width: 100%;
+}
+#container #main #posts .post {
+    background: #5BB2FF;
+    color: #000F84;
+    margin: 20px 0 0;
+    padding: 10px;
+}
+#container #main #posts .post .author {
+    font-size: 20px;
+}
+#container #main #posts .post .author span {
+    font-size: 15px;
+}
+#container #main #posts .post .text {
+    border-top: 2px solid #fff;
+    padding: 5px 0 10px;
+}
+#container #main #posts .post a {
+    background: #FF6100;
+    border-radius: 10px;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    height: 25px;
+    line-height: 25px;
+    margin: 5px 0 0;
+    text-align: center;
+    text-decoration: none;
+    width: 60px;
+}
+#container #main #posts .post a:hover {
+    background: #FF8800;
+}
+#container #main #posts .comment {
+    background: #A0D2FF;
+    color: #000F84;
+    margin: 10px 0 10px 80px;
+    padding: 20px;
+}
+#container #main #posts .comment .author {
+    font-size: 20px;
+}
+#container #main #posts .comment .author span {
+    font-size: 15px;
+}
+#container #main #posts .comment .text {
+    border-top: 2px solid #fff;
+    padding: 5px 0 10px;
+}
+
+#container footer {
+    background: #888;
+    height: 150px;
+    width: 100%;
+}
+
+#reply_textarea {
+    height: 120px;
+    width: 320px;
+}
