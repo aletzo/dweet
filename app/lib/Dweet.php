@@ -102,7 +102,7 @@ class Dweet
         try {
             $this->db = new PDO("mysql:host={$this->config['db_host']};dbname={$this->config['db_name']}", $this->config['db_username'], $this->config['db_password']);  
 
-            $this->db->query('SET NAMES UTF-8'); //we make sure that the MySQL will handle properly the non ASCII utf-8 characters
+            $this->db->query('SET NAMES utf8'); //we make sure that the MySQL will handle properly the non ASCII utf-8 characters
         } catch (Exception $e) {
             Dweet_Logger::log('error', $e->getMessage() . ' ' . $e->getTraceAsString());
         }
