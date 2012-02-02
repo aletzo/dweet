@@ -4,4 +4,4 @@ The db schema is located at: sql/schema.sql
 
 To install, just clone the repository and fix the config/config.php
 
-The code heavily undocumented and uncommented. Yet :D
+The code documented and commented. Sort of :D
