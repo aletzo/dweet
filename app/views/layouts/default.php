@@ -16,10 +16,10 @@
         <header>
             <div class="center">
                 <h1>
-                    <a href="<?php echo Dweet_Helper::baseurl() ?>/page/home">Dweet</a>
+                    <a href="<?php echo Dweet_Helper::baseurl() ?>">Dweet</a>
                 </h1>
                 <div id="menu">
-                    <a href="<?php echo Dweet_Helper::baseurl() ?>/page/home">Home</a>
+                    <a href="<?php echo Dweet_Helper::baseurl() ?>">Home</a>
                     <a href="<?php echo Dweet_Helper::baseurl() ?>/page/about">About</a>
                 </div>
             </div>
